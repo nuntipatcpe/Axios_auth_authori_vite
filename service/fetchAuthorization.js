@@ -2,7 +2,7 @@ import axios from "axios";
 
 axios.interceptors.request.use(async (config) => {
     const token = localStorage.getItem("token");
-
+    
     if (token !== null) {
         config.headers = {
             "Authorization": `Bearer ${token}`
@@ -18,7 +18,7 @@ axios.interceptors.response.use((response)=>{
 },
 function (error) {
     //status>200
-    
+
     if (error.response.status === 403) {
         localStorage.removeItem('token')
     }
