@@ -29,7 +29,7 @@ function Login() {
       })
       .then((res) => {
         localStorage.setItem("token", res.data.accessToken);
-        round("/");
+        round("/home");
       })
       .catch((err) => {
         alert(`Not found\n${err}`);

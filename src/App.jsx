@@ -6,6 +6,9 @@ import Login from "./pages/Login/Login";
 
 import Aut from "../component/Aut";
 
+import PublicRoutes from "./routers/Public.routes";
+import ProtectedRoutes from "./routers/Protected.routes";
+
 import { Routes, Route } from "react-router-dom";
 function App() {
   // const [token, setToken] = useState(localStorage.getItem('token'));
@@ -32,7 +35,7 @@ function App() {
   return (
     <div className="app">
       <Routes>
-        <Route path="/login" element={<Login />} />
+        {/* <Route path="/login" element={<Login />} />
         <Route
           path="/"
           element={
@@ -40,8 +43,21 @@ function App() {
                 <Home/>
             </Aut>
           }
-        />
-         <Route path="*" element={<>404 | This page could not be found.</>} />
+        /> */}
+
+        {/* Public routes */}
+        <Route path="/" element={<PublicRoutes />}>
+          <Route path="/" element={<Login/>} />   
+          <Route path="*" element={<Login/>} />   
+        </Route>
+
+        {/* Protected routes */}
+        <Route path="/" element={<ProtectedRoutes />}>
+          <Route path="/home" element={<Home/>} />   
+          <Route path="*" element={<>404 | This page could not be found.</>} />
+        </Route>
+
+      
       </Routes>
     </div>
   );
