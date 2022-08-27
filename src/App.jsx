@@ -9,7 +9,7 @@ import Aut from "../component/Aut";
 import PublicRoutes from "./routers/Public.routes";
 import ProtectedRoutes from "./routers/Protected.routes";
 
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route ,Navigate,Link} from "react-router-dom";
 function App() {
   // const [token, setToken] = useState(localStorage.getItem('token'));
 
@@ -47,14 +47,15 @@ function App() {
 
         {/* Public routes */}
         <Route path="/" element={<PublicRoutes />}>
-          <Route path="/" element={<Login/>} />   
-          <Route path="*" element={<Login/>} />   
+          <Route path="/" element={<Navigate to='/login'/>} />
+          <Route path="/login" element={<Login/>} />
+          {/* <Route path="*" element={<Login/>} />    */}
         </Route>
 
         {/* Protected routes */}
         <Route path="/" element={<ProtectedRoutes />}>
           <Route path="/home" element={<Home/>} />   
-          <Route path="*" element={<>404 | This page could not be found.</>} />
+          <Route path="*" element={<>404 | This page could not be found.<br/><Link to="home">Home</Link> </>} />
         </Route>
 
       
