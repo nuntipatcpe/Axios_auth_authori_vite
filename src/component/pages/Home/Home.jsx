@@ -7,7 +7,7 @@ import Card from "@mui/material/Card";
 import CardHeader from "@mui/material/CardHeader";
 import Avatar from "@mui/material/Avatar";
 
-import { fetchAuthorization } from "../../../service/fetchAuthorization";
+import { fetchAuthorization } from "../../../utils/fetchAuthorization";
 
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";

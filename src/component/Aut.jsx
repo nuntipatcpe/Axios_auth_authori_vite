@@ -3,7 +3,7 @@ import { useState } from "react";
 import { useEffect } from "react";
 import { Navigate, useNavigate } from "react-router-dom";
 
-import { fetchAuthorization } from "../service/fetchAuthorization";
+import { fetchAuthorization } from "../utils/fetchAuthorization";
 
 function Aut({ children }) {
   const round = useNavigate();

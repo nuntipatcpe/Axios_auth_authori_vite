@@ -1,10 +1,10 @@
 import { useState, useEffect } from "react";
 import "./App.css";
 
-import Home from "./pages/Home/Home";
-import Login from "./pages/Login/Login";
+import Home from "./component/pages/Home/Home";
+import Login from "./component/pages/Login/Login";
 
-import Aut from "../component/Aut";
+import Aut from "./component/Aut";
 
 import PublicRoutes from "./routers/Public.routes";
 import ProtectedRoutes from "./routers/Protected.routes";

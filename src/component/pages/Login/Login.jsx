@@ -10,7 +10,7 @@ import { Alert } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 
-import { fetchAuthorization } from "../../../service/fetchAuthorization";
+import { fetchAuthorization } from "../../../utils/fetchAuthorization";
 
 
 function Login() {
